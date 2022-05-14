@@ -30,6 +30,19 @@ PermissionsSchema.post("save", function(error, doc, next) {
   }
 });
 
+PermissionsSchema.static(
+    "checkPermissions",
+    async function checkPermissions(filters) {
+      const permission = await this.findOne(filters);
+      if (!permission) {
+        const error = new Error("user doesn't have permission");
+        error.code = 400;
+        throw error;
+      }
+      return permission;
+    },
+);
+
 PermissionsSchema.index(
     { userId: 1, action: 1, resource: 1 },
     { unique: true },

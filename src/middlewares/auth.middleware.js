@@ -24,13 +24,13 @@ async function auth(req, res, next) {
     if (req?.route?.path !== "/logout") {
       const { jti } = decoded;
       const userId = await Redis.get(jti);
-      if (!userId) {
+      if (userId) {
         const error = new Error("Unauthorized");
         error.code = 401;
         throw error;
       }
     }
-    req.user = decoded;
+    req.tokenPayload = decoded;
     next();
   } catch (e) {
     return next(e);

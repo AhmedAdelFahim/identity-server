@@ -29,9 +29,9 @@ const login = async (req, res, next) => {
 
 const logout = async (req, res, next) => {
   try {
-    const { user } = req;
-    await Redis.set(user.jti, user.userId);
-    await Redis.expireAt(user.jti, user.exp);
+    const { tokenPayload } = req;
+    await Redis.set(tokenPayload.jti, tokenPayload.userId);
+    await Redis.expireAt(tokenPayload.jti, tokenPayload.exp);
     Logger.log("debug", "logout successfully");
     res.status(200).send({ message: "logout successfully" });
   } catch (e) {
