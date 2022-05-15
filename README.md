@@ -41,3 +41,4 @@ These steps will get you a copy of the project up and running for development an
 ## Todo
 - [ ] increase test coverage
 - [ ] handle owasp vulnerabilities
+- [ ] deploy app
