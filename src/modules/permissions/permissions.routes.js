@@ -13,4 +13,9 @@ permissionRouter.post(
     PermissionsController.createPermission,
 );
 
+permissionRouter.delete(
+    "/remove/:id",
+    PermissionsController.removePermission,
+);
+
 module.exports = permissionRouter;
