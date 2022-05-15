@@ -13,9 +13,6 @@ const UserSchema = new Schema(
       username: { type: String, required: true, unique: true },
       password: { type: String, required: true },
       isVerified: { type: Boolean, optional: true, default: false },
-      permissions: [
-        { type: Schema.Types.ObjectId, required: true, ref: "Permission" },
-      ],
     },
     { timestamps: true },
 );

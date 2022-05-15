@@ -36,7 +36,7 @@ PermissionsSchema.static(
       const permission = await this.findOne(filters);
       if (!permission) {
         const error = new Error("user doesn't have permission");
-        error.code = 400;
+        error.code = 401;
         throw error;
       }
       return permission;

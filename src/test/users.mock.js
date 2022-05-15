@@ -18,13 +18,6 @@ const VerifiedUser = {
   isVerified: true,
 };
 
-const UnauthorizedUser = {
-  _id: "620ab538e33700e1bfd1fc7b",
-  email: "gawif96971@diolang.com",
-  username: "gawif96971",
-  password: "P@ssw0rd",
-  isVerified: true,
-};
 
 const NotVerifiedUser = {
   _id: "62066c4ca352a5a5edb71a93",
@@ -38,23 +31,17 @@ const VerifiedUserToken = generateJWT(
     prepareAccessTokenPayload(VerifiedUser),
     getConfig().JWT_KEY,
 );
-const UnauthorizedUserToken = generateJWT(
-    prepareAccessTokenPayload(UnauthorizedUser),
-    getConfig().JWT_KEY,
-);
+
 
 async function initializeUsersForTesting() {
   await User.create(VerifiedUser);
   await User.create(NotVerifiedUser);
-  await User.create(UnauthorizedUser);
 }
 
 module.exports = {
   initializeUsersForTesting,
   VerifiedUserToken,
-  UnauthorizedUserToken,
   ValidUser,
   VerifiedUser,
-  UnauthorizedUser,
   NotVerifiedUser,
 };
