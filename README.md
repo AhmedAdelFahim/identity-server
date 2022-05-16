@@ -38,7 +38,17 @@ These steps will get you a copy of the project up and running for development an
 2. [Redis](https://github.com/redis/node-redis)
 3. [Mongodb](https://docs.mongodb.com/)
 
+## Server Features
+- [X] We can create user.
+- [X] We can give user permissions on specific action.
+- [X] We can revoke permissions from user on specific action.
+- [X] Server can authenticate user to access a system.
+- [X] Server can check user's permissions before do an action.
+- [X] Server can force user to be logout from system.
 ## Todo
 - [ ] increase test coverage
 - [ ] handle owasp vulnerabilities
 - [ ] deploy app
+- [ ] dockerize app
+- [ ] secure creation services
+- [ ] implement refresh token
