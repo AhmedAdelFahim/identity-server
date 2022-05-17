@@ -1,6 +1,4 @@
 const app = require("./app");
-// import {Redis} from './src/utils/redis';
-
 const { getConfig, checkEnvVariables } = require("./config/config");
 const { startDbConnection } = require("./config/db-connection");
 const Logger = require("./middlewares/logger.middleware");
