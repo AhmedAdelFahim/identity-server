@@ -31,6 +31,13 @@ These steps will get you a copy of the project up and running for development an
   ```
   npm run test
   ```
+  
+## Running Using Docker
+1. write required variables in docker-compose.yml
+2. Run the following commands:
+  ```
+  docker-compose up
+  ```
 
 ## [API Documentation](https://documenter.getpostman.com/view/20985353/UyxjFksf)
 
@@ -51,7 +58,7 @@ These steps will get you a copy of the project up and running for development an
 - [ ] increase test coverage
 - [ ] handle owasp vulnerabilities
 - [ ] deploy app
-- [ ] dockerize app
+- [X] dockerize app
 - [ ] secure creation services
 - [ ] implement refresh token
 - [ ] convert postman documentation to swagger documentation
