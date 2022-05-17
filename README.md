@@ -1,5 +1,7 @@
 # Identity Server
 
+Authentication and Authorization Server.
+
 ## Getting Started
 
 These steps will get you a copy of the project up and running for development and testing purposes.
