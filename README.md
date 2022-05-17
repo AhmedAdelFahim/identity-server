@@ -52,3 +52,4 @@ These steps will get you a copy of the project up and running for development an
 - [ ] dockerize app
 - [ ] secure creation services
 - [ ] implement refresh token
+- [ ] convert postman documentation to swagger documentation
