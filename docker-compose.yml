@@ -1,0 +1,48 @@
+version: '3'
+services:
+  api:
+    build: "."
+    container_name: api
+    restart: always
+    environment:
+      - DB_URL=mongodb://root:root@mongodb:27017/url_monitor
+      - PORT=9000
+      - NODE_ENV=production
+      - JWT_KEY=aslkjdklasdjaksldjalks
+      - JWT_VERIFICATION_KEY=ldakldjaklsdjaskld
+      - REDIS_URL=redis://redis:6379
+      - EMAIL_HOST=smtp.gmail.com
+      - EMAIL_PORT=465
+      - EMAIL_USERNAME=identity.server.2022@gmail.com
+      - EMAIL_PASSWORD=ntfrxyobisplkspl
+      - EMAIL_VERIFICATION_URL=/api/v1/users/verify/
+      - QUEUE_NAME=job-scheduler
+      - SERVER_HOST=http://0.0.0.0:9000
+    ports:
+      - 9000:9000
+    depends_on:
+      - mongodb
+      - redis
+  redis:
+    container_name: redis
+    restart: always
+    image: redis:latest
+    ports: 
+      - 6390:6379
+    volumes:
+      - redis:/data
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - 27019:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
+  redis:
